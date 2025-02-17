@@ -71,7 +71,7 @@ public class UserInterface {
     private void withdraw() {
         System.out.print("\nInforme o valor a ser sacado: ");
         double value = readValue();
-        account.withdraw(value); // pode dar problema
+        account.withdraw(value) ; // pode dar problema
         System.out.println("Saque realizado com sucesso");
     }
 

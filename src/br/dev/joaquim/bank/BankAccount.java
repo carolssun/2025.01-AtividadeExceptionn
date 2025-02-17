@@ -8,7 +8,7 @@ public class BankAccount {
   public BankAccount() {
   }
 
-  public BankAccount(int accountNumber, double balance, String accountHolderName) {
+  public BankAccount(int accountNumber, double balance, String accountHolderName) throws InsufficientFundsException {
     this.accountNumber = accountNumber;
     this.balance = balance;
     this.accountHolderName = accountHolderName;
@@ -35,15 +35,15 @@ public class BankAccount {
     this.balance += value;
   }
 
-  public void withdraw(double value) {
+  public void withdraw(double value) throws InsufficientFundsException {
 
     if (value < 0) {
       throw new IllegalArgumentException("O valor precisa ser positivo, foi informado o valor R$ " + value);
     }
 
     if (value > this.balance) {
-      // Não deveria ser assim, não pode ter print a classe
-      System.out.println("O valor R$ " + value + " é superior ao saldo [R$ " + this.balance + "]");
+
+      throw new InsufficientFundsException ("O valor R$ " + value + " é superior ao saldo [R$ " + this.balance + "]");
     }
 
     this.balance -= value;
