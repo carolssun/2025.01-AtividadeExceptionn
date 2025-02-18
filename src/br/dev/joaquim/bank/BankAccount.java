@@ -8,7 +8,14 @@ public class BankAccount {
   public BankAccount() {
   }
 
-  public BankAccount(int accountNumber, double balance, String accountHolderName) throws InsufficientFundsException {
+  /**
+   *  Construtor que incializa a conta bancária com  número,saldo e nome
+   * @param accountNumber - o número da conta
+   * @param balance - o saldo inicial da conta
+   * @param accountHolderName - o nome do titular da conta
+   */
+
+  public BankAccount(int accountNumber, double balance, String accountHolderName){
     this.accountNumber = accountNumber;
     this.balance = balance;
     this.accountHolderName = accountHolderName;
@@ -26,6 +33,12 @@ public class BankAccount {
     return accountHolderName;
   }
 
+  /**
+   *  realizar um depósito na conta
+   * @param value - valor a ser depositado
+   * @throws IllegalArgumentException - se o valor informado for negativo, informar mensagem 
+   */
+
   public void deposit(double value) {
 
     if (value < 0) {
@@ -34,6 +47,13 @@ public class BankAccount {
 
     this.balance += value;
   }
+
+  /**
+   * realizar um saque na conta
+   * @param value - valor a ser sacado
+   * @throws InsufficientFundsException - se o valor informado for negativo
+   * @throws InsufficientFundsException - se o valor sacado for superior ao saldo da conta
+   */
 
   public void withdraw(double value) throws InsufficientFundsException {
 
