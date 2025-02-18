@@ -21,14 +21,27 @@ public class BankAccount {
     this.accountHolderName = accountHolderName;
   }
 
+  /**
+   * 
+   * @return -obtém o número da conta
+   */
   public int getAccountNumber() {
     return accountNumber;
   }
 
+
+  /**
+   * 
+   * @return - obtém o saldo atual da conta
+   */
   public double getBalance() {
     return balance;
   }
 
+  /**
+   * 
+   * @return - obtém o nome do titular
+   */
   public String getAccountHolderName() {
     return accountHolderName;
   }
@@ -69,6 +82,10 @@ public class BankAccount {
     this.balance -= value;
   }
 
+  /**
+   * retorna uma string da conta 
+   * @return - a representação da conta nesse formato específico
+   */
   @Override
   public String toString() {
     return "Conta " + accountNumber + " de " + accountHolderName + " têm R$ " + balance + " de saldo";

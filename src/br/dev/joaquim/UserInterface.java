@@ -6,6 +6,9 @@ import java.util.Scanner;
 import br.dev.joaquim.bank.BankAccount;
 import br.dev.joaquim.bank.InsufficientFundsException;
 
+/**
+ * permite o usuário criar uma conta, depositar, sacar e visualizar infos
+ */
 public class UserInterface {
     private Scanner input = new Scanner(System.in);
     private BankAccount account;
